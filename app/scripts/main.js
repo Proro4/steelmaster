@@ -23,16 +23,16 @@ $(document).ready(function(){
   });
   $('.header__menu__mob__butt').on('click', function(){
   	$('.header__menu__mob').addClass('active');
-  })
+  });
   $('.menu-exit').on('click', function(){
   	$('.header__menu__mob').removeClass('active');
-  })
+  });
   $('.modal-form__load input').on('change',function(){
 	  var myFile = $('.modal-form__load input').prop('files');
 	  if(myFile.length != 0){
 	  	$(this).parent().addClass('active');
 	  }
-  })
+  });
   $(window).scroll(function(){
     var wScroll = $(this).scrollTop();
     if(wScroll >= 35){
@@ -40,5 +40,13 @@ $(document).ready(function(){
     }else{
       $('.header__inner').removeClass('active');
     }
+  });
+  $('.contacts__block__open').on('click',function(){
+      if($(this).parent().hasClass('open')){
+          $(this).parent().removeClass('open');
+      }else{
+          $('.contacts__block').removeClass('open');
+          $(this).parent().addClass('open');
+      }
   })
 });

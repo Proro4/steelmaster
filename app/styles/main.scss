@@ -54,17 +54,35 @@ $grey:#cccccc;
   font-weight: normal;
   font-style: normal;
 }
-
+* {
+  font-family: Arial !important;
+}
+h1.h1-page{
+  font-size: 42px;
+  font-family: 'AvenirNextCyr-Heavy';
+  font-weight: 900;
+  text-transform: uppercase;
+  background: url("../images/h2_ic_2.png")no-repeat left center;
+  padding: 20px;
+}
 h2{
   color: black;
   font-size: 42px;
   font-family: 'AvenirNextCyr-Heavy';
+  font-weight: 900;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 35px;
   span{
     color: $red;
   }
+}
+h3{
+  font-size:28px;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+  margin-bottom: 30px;
 }
   .h2-bord{
     display: inline-block;
@@ -496,6 +514,7 @@ body {
       position: relative;
       z-index: 90;
       font-family: 'AvenirNextCyr-Heavy';
+      font-weight: 900;
       text-transform: uppercase;
       font-size: 100px;
       padding-left: 60px;
@@ -911,6 +930,7 @@ body {
       margin: 25px 0 35px;
       font-size: 16px;
       font-family: 'AvenirNextCyr-Heavy';
+      font-weight: 900;
       text-transform: uppercase;
       height: 80px;
       span{
@@ -970,6 +990,7 @@ body {
       font-size: 13px;
       color: black;
       font-family: 'AvenirNextCyr-Heavy';
+      font-weight: 900;
       text-transform: uppercase;
       float: left;
       padding-right: 20px;
@@ -1131,6 +1152,11 @@ body {
 #maptab_5{
   left: 355px;
   top: 105px;
+}
+.foot-top{
+  margin-top: 100px;
+  padding-top: 40px;
+  border:1px solid #cecece;
 }
 .footer{
     margin-bottom: 30px;
@@ -1365,6 +1391,117 @@ button.close{
 }
 
 
+.contacts{
+  margin-bottom:50px;
+  &__block{
+    width:780px;
+    position: relative;
+    &.open{
+      .contacts__block__info{
+        height: auto;
+        animation: opencontacts 0.5s 1;
+      }
+      .contacts__block__open{
+        &:before{
+          transform: rotate(95deg);
+        }
+      }
+    }
+    &__title{
+      width: 100%;
+      height: 55px;
+      box-sizing: border-box;
+      background: #f6f6f6;
+      border-radius: 10px 0 0 10px;
+      font-size: 17px;
+      display: flex;
+      font-weight: 600;
+      align-items: center;
+      padding-left: 30px;
+      text-transform: uppercase;
+    }
+    &__open{
+      position: absolute;
+      width: 90px;
+      border-radius: 0 10px 10px 0;
+      height: 55px;
+      background: #ba3433;
+      left: 100%;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-sizing: border-box;
+      transition: 0.3s all;
+      &:before,
+      &:after{
+        content: '';
+        position: absolute;
+        height: 15px;
+        width: 2px;
+        background: white;
+        transition: 0.3s all;
+        transition: 0.3s all;
+      }
+      &:after{
+        transform: rotate(90deg);
+      }
+    }
+    &__info{
+      background: #f6f6f6;
+      margin-top: 7px;
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+      height: 0;
+      margin-bottom: 10px;
+      transition: 0.5s all;
+      &__inner{
+        padding: 55px;
+      }
+      &__map{
+        height: 320px;
+        width: 100%;
+        border: 1px solid $red;
+        margin-bottom: 20px;
+        #map,
+        .map{
+          width: 100%;
+          height: 100%;
+        }
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      p{
+        font-size: 16px;
+        color: black;
+        margin-bottom: 15px;
+        padding-left: 25px;
+      }
+      .address{
+        background: url("../images/marker-text.png")no-repeat left center;
+      }
+      .tel{
+        background: url("../images/tel_ic_r.png")no-repeat left center;
+      }
+      a{
+        color: $red;
+        display: block;
+      }
+    }
+  }
+}
+@keyframes opencontacts {
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 500px;
+  }
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
@@ -1551,6 +1688,12 @@ button.close{
   }
 }
 @media screen and (max-width: 992px){
+  .contacts{
+    padding: 0 15px;
+  }
+  .contacts__block{
+    width: 80%;
+  }
   .slider__item__title.h2{
     font-size: 60px;
   }
@@ -1738,8 +1881,29 @@ button.close{
   .footer .butt__tel{
     margin-top: 15px;
   }
+  .contacts__block__info__map{
+    height: 250px;
+  }
+  .contacts__block__info__inner {
+    padding: 25px;
+  }
+  .contacts__block__info p{
+    font-size: 12px;
+  }
 }
 @media screen and (max-width: 440px){
+  .contacts__block__info__map{
+    height: 200px;
+  }
+  .contacts__block__open{
+    width: 40px;
+  }
+  .contacts__block__title{
+    font-size: 15px;
+  }
+  .contacts__block{
+    width: 90%;
+  }
   button.close{
     top:-10px;
     right:-20px;
