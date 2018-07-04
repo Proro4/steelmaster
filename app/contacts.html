@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>generator webapp</title>
+    <title>steelmaster</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -119,7 +119,7 @@
         </div>
       </div>
     </header>
-    <section class="slider">
+    <section class="slider slider-in">
       <div class="container container-1400 p-relative">
         <div class="row">
           <div class="slider__form">
@@ -177,7 +177,7 @@
             <div class="contacts__block__info">
               <div class="contacts__block__info__inner">
                 <div class="contacts__block__info__map">
-                  <img src="images/map_img_1.png" alt="">
+                  <div class="map" id="map"></div>
                 </div>
                 <p class="address">127642, г.Москва, проезд Дежнёва, 1, БЦ "Дёжнев плаза", офис 205.</p>
                 <p class="tel">+7(495)504-40-77</p>
@@ -194,7 +194,7 @@
             <div class="contacts__block__info">
               <div class="contacts__block__info__inner">
                 <div class="contacts__block__info__map">
-                  <img src="images/map_img_1.png" alt="">
+                  <div class="map" id="mapOne"></div>
                 </div>
                 <p class="address">127642, г.Москва, проезд Дежнёва, 1, БЦ "Дёжнев плаза", офис 205.</p>
                 <p class="tel">+7(495)504-40-77</p>
@@ -317,6 +317,104 @@
         </div>
       </div>
     </footer>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6AvtDOz1HkY1uEX6q4BtyFPeRKC5XN1o&amp;">
+    </script>
+
+    <script type="text/javascript">
+        // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var styleMap = [
+                { "featureType": "administrative", "elementType": "all", "stylers": [ {  "visibility": "off"  }  ] },
+                { "featureType": "administrative", "elementType": "geometry", "stylers": [ { "visibility": "on"   } ] },
+                { "featureType": "administrative", "elementType": "labels.text",  "stylers": [ {  "color": "#8d8d8d"  } ]  },
+                { "featureType": "landscape",  "elementType": "all",  "stylers": [  {  "visibility": "off" } ]   },
+                { "featureType": "landscape",  "elementType": "geometry", "stylers": [  {   "visibility": "on" }  ] },
+                { "featureType": "landscape",  "elementType": "geometry.fill",  "stylers": [ {    "color": "#f5f5f5"   }  ]  },
+                { "featureType": "poi", "elementType": "all",  "stylers": [ { "visibility": "off"   } ]  },
+                { "featureType": "poi", "elementType": "geometry", "stylers": [ {  "visibility": "on" } ] },
+                { "featureType": "poi", "elementType": "geometry.fill", "stylers": [ { "color": "#e5e5e5" } ] },
+                { "featureType": "poi", "elementType": "geometry.stroke", "stylers": [ { "lightness": "-98" }, { "saturation": "-58" }, { "gamma": "0.00" }, { "weight": "0.01" } ] },
+                { "featureType": "poi", "elementType": "labels", "stylers": [ { "weight": "0.01" } ] },
+                { "featureType": "poi", "elementType": "labels.text", "stylers": [ { "color": "#9e9e9e" }, { "weight": "0.01" } ] },
+                { "featureType": "poi.attraction", "elementType": "all", "stylers": [ { "visibility": "off" } ] },
+                { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [ { "color": "#e5e5e5" } ] },
+                { "featureType": "poi.park", "elementType": "labels", "stylers": [ { "color": "#8d8d8d" }, { "saturation": "-100" }, { "lightness": "8" }, { "weight": "0.01" } ] },
+                { "featureType": "poi.place_of_worship", "elementType": "geometry", "stylers": [ { "visibility": "on" } ] },
+                { "featureType": "poi.place_of_worship", "elementType": "geometry.fill", "stylers": [ { "color": "#e5e5e5" }, { "visibility": "on" } ] },
+                { "featureType": "poi.place_of_worship", "elementType": "geometry.stroke", "stylers": [ { "saturation": "-74" }, { "visibility": "off" } ] },
+                { "featureType": "road", "elementType": "all", "stylers": [ { "visibility": "on" } ] },
+                { "featureType": "road", "elementType": "geometry", "stylers": [ { "visibility": "on" } ] },
+                { "featureType": "road", "elementType": "geometry.fill", "stylers": [ {  "color": "#ffffff" } ] },
+                { "featureType": "transit", "elementType": "all", "stylers": [ { "visibility": "off" } ] },
+                { "featureType": "transit", "elementType": "geometry", "stylers": [ { "visibility": "on" } ] },
+                { "featureType": "transit", "elementType": "labels", "stylers": [ { "color": "#8d8d8d" }, { "saturation": "-2" }, { "weight": "0.01" } ] },
+                { "featureType": "water", "elementType": "geometry.fill", "stylers": [ { "color": "#c9c9c9" } ] },
+                { "featureType": "water", "elementType": "labels", "stylers": [ { "color": "#9e9e9e" } ] }
+            ];
+
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 14,
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(55.759318, 37.618008), //  ,
+                gestureHandling: 'cooperative',
+
+                // How you would like to style the map.
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: styleMap
+            };
+            var mapOptions1 = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 14,
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(55.729318, 37.518008), //  ,
+                gestureHandling: 'cooperative',
+
+                // How you would like to style the map.
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: styleMap
+            };
+
+            // Get the HTML DOM element that will contain your map
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+            var mapElement1 = document.getElementById('mapOne');
+
+            // Create the Google Map using our element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+            var mapOne = new google.maps.Map(mapElement1, mapOptions1);
+
+            // Let's also add a marker while we're at it
+
+
+            var marker = new google.maps.Marker({
+                position:  {lat:55.759318, lng:37.618008},
+                map: map,
+                icon: 'images/marker.png'
+            });
+            var marker1 = new google.maps.Marker({
+                position:  {lat:55.729318, lng:37.518008},
+                map: mapOne,
+                icon: 'images/marker.png'
+            });
+        }
+
+
+    </script>
+
+
+
+
+
+
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

@@ -1,10 +1,28 @@
 $(document).ready(function(){
-  $('.owl-carousel').owlCarousel({
+  $('.header-slider').owlCarousel({
   	items:1,
   	dots:true,
-  	// autoplay: true,
+  	autoplay: true,
   	autoplaySpeed:500
   });
+$('.about-slider').owlCarousel({
+    items:1,
+    // autoplay: true,
+    autoplaySpeed:500,
+    dots:false,
+    nav:true,
+    responsive:{
+        992:{
+            items:4
+        },
+        770:{
+            items:3
+        },
+        440:{
+            items:2
+        }
+    }
+});
   // map icon
 
   $('.info-map__map__ic li').mouseenter(function(){
