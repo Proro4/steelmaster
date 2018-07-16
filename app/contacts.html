@@ -211,7 +211,7 @@
             <div class="contacts__block__info">
               <div class="contacts__block__info__inner">
                 <div class="contacts__block__info__map">
-                  <img src="images/map_img_1.png" alt="">
+                  <div class="map" id="mapTwo"></div>
                 </div>
                 <p class="address">127642, г.Москва, проезд Дежнёва, 1, БЦ "Дёжнев плаза", офис 205.</p>
                 <p class="tel">+7(495)504-40-77</p>
@@ -228,7 +228,7 @@
             <div class="contacts__block__info">
               <div class="contacts__block__info__inner">
                 <div class="contacts__block__info__map">
-                  <img src="images/map_img_1.png" alt="">
+                  <div class="map" id="mapThree"></div>
                 </div>
                 <p class="address">127642, г.Москва, проезд Дежнёва, 1, БЦ "Дёжнев плаза", офис 205.</p>
                 <p class="tel">+7(495)504-40-77</p>
@@ -245,7 +245,7 @@
             <div class="contacts__block__info">
               <div class="contacts__block__info__inner">
                 <div class="contacts__block__info__map">
-                  <img src="images/map_img_1.png" alt="">
+                  <div class="map" id="mapFour"></div>
                 </div>
                 <p class="address">127642, г.Москва, проезд Дежнёва, 1, БЦ "Дёжнев плаза", офис 205.</p>
                 <p class="tel">+7(495)504-40-77</p>
@@ -262,7 +262,7 @@
             <div class="contacts__block__info">
               <div class="contacts__block__info__inner">
                 <div class="contacts__block__info__map">
-                  <img src="images/map_img_1.png" alt="">
+                  <div class="map" id="mapFive"></div>
                 </div>
                 <p class="address">127642, г.Москва, проезд Дежнёва, 1, БЦ "Дёжнев плаза", офис 205.</p>
                 <p class="tel">+7(495)504-40-77</p>
@@ -381,15 +381,67 @@
                 // This is where you would paste any style found on Snazzy Maps.
                 styles: styleMap
             };
+            var mapOptions2 = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 14,
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(55.729318, 37.518008), //  ,
+                gestureHandling: 'cooperative',
+
+                // How you would like to style the map.
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: styleMap
+            };
+            var mapOptions3 = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 14,
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(55.729318, 37.518008), //  ,
+                gestureHandling: 'cooperative',
+
+                // How you would like to style the map.
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: styleMap
+            };
+            var mapOptions4 = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 14,
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(55.729318, 37.518008), //  ,
+                gestureHandling: 'cooperative',
+
+                // How you would like to style the map.
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: styleMap
+            };
+            var mapOptions5 = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 14,
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(55.729318, 37.518008), //  ,
+                gestureHandling: 'cooperative',
+
+                // How you would like to style the map.
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: styleMap
+            };
 
             // Get the HTML DOM element that will contain your map
             // We are using a div with id="map" seen below in the <body>
             var mapElement = document.getElementById('map');
             var mapElement1 = document.getElementById('mapOne');
+            var mapElement2 = document.getElementById('mapTwo');
+            var mapElement3 = document.getElementById('mapThree');
+            var mapElement4 = document.getElementById('mapFour');
+            var mapElement5 = document.getElementById('mapFive');
 
             // Create the Google Map using our element and options defined above
             var map = new google.maps.Map(mapElement, mapOptions);
             var mapOne = new google.maps.Map(mapElement1, mapOptions1);
+            var mapTwo = new google.maps.Map(mapElement2, mapOptions2);
+            var mapThree = new google.maps.Map(mapElement3, mapOptions3);
+            var mapFour = new google.maps.Map(mapElement4, mapOptions4);
+            var mapFive = new google.maps.Map(mapElement5, mapOptions5);
 
             // Let's also add a marker while we're at it
 
@@ -402,6 +454,26 @@
             var marker1 = new google.maps.Marker({
                 position:  {lat:55.729318, lng:37.518008},
                 map: mapOne,
+                icon: 'images/marker.png'
+            });
+            var marker1 = new google.maps.Marker({
+                position:  {lat:55.729318, lng:37.518008},
+                map: mapTwo,
+                icon: 'images/marker.png'
+            });
+            var marker1 = new google.maps.Marker({
+                position:  {lat:55.729318, lng:37.518008},
+                map: mapThree,
+                icon: 'images/marker.png'
+            });
+            var marker1 = new google.maps.Marker({
+                position:  {lat:55.729318, lng:37.518008},
+                map: mapFour,
+                icon: 'images/marker.png'
+            });
+            var marker1 = new google.maps.Marker({
+                position:  {lat:55.729318, lng:37.518008},
+                map: mapFive,
                 icon: 'images/marker.png'
             });
         }
