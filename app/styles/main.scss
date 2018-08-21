@@ -1101,6 +1101,7 @@ body {
   }
 }
 .info-map{
+  overflow: hidden;
   padding: 85px 0;
   background: linear-gradient(150deg, #f9f9f9 0%, #f9f9f9 50%, white 50%, white 100%);
   &__2{
@@ -1198,7 +1199,7 @@ body {
       left: 0;
       top:0;
       height: 492px;
-      width: 1050px;
+      width: 1000px;
       background: url('../images/map_img-1.png')no-repeat;
     }
     &__ic{
@@ -2265,12 +2266,15 @@ a.h1-page__back{
   }
 }
 .text{
-  .h2-bord{
+  margin-bottom: 75px;
+  h1{
     text-align: left;
+    margin-bottom: 50px;
   }
 }
 
 .slider-center{
+  overflow: hidden;
   margin-bottom: 75px;
   position: relative;
   &__block{
@@ -2439,6 +2443,18 @@ a.h1-page__back{
   #maptab_5{
     left: 255px;
     top: 75px;
+  }
+}
+@media screen and (max-width: 1350px){
+  .slider-center .owl-nav .owl-prev{
+    right: 99%;
+    height: 55px;
+    width: 55px;
+  }
+  .slider-center .owl-nav .owl-next{
+    left: 99%;
+    height: 55px;
+    width: 55px;
   }
 }
 @media screen and (max-width: 1220px) {
@@ -2724,6 +2740,7 @@ a.h1-page__back{
     .text{
       padding: 0 15px;
     }
+
     .about-company__slider .owl-theme .owl-nav button{
       height: 45px;
       width: 45px;
