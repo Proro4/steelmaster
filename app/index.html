@@ -107,14 +107,14 @@
                     <div class="header__info__email"><a href="mailto:zakaz@steelmaster.ru">zakaz@steelmaster.ru</a></div>
                   </li>
                   <li>
-                    <a href="#" class="butt butt__tel">Заказать звонок</a> 
+                    <a href="#" class="butt butt__tel" data-toggle="modal" data-target="#exampleModal1">Заказать звонок</a>
                     <a href='#' class="butt butt_red" data-toggle="modal" data-target="#exampleModal">Запросить расчет</a>
                   </li> 
                   <li><a class="menu-exit" href="#">X</a></li>
                 </ul>
               </div>
             </div>
-            <a href="#" class="butt butt__tel mob_n">Заказать звонок</a>
+            <a href="#" class="butt butt__tel mob_n" data-toggle="modal" data-target="#exampleModal1">Заказать звонок</a>
           </div>
         </div>
       </div>
@@ -216,7 +216,32 @@
                   <input class="butt2 butt2__red"  type="submit" value="отправить запрос">
                 </div>
               </form>
-            </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Заказать звонок</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="modal-form">
+                <input class="modal-form__name" type="text" placeholder="*ФИО">
+                <input class="modal-form__tel"  type="tel" placeholder="*Телефон">
+                <label class="modal-form__check" >
+                  <input type="checkbox">
+                  <span>Согласие на обработку персональных данных</span>
+                </label>
+                <div class="modal-form__submit">
+                  <input class="butt2 butt2__red"  type="submit" value="отправить запрос">
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
